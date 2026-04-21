@@ -97,7 +97,7 @@ export const designers: Designer[] = [
     slug:      "maya",
     name:      "Maya",
     role:      "Product Designer",
-    photo:     "",
+    photo:     "/designers/maya.jpg",
     cardAccent: "#A78BFA",
   },
 ]
