@@ -25,6 +25,42 @@ Any time a file is saved, the browser updates instantly — no refresh needed.
 
 ---
 
+## Let Claude Code do the styling
+
+Not into editing code directly? Use Claude Code — it's a free AI coding tool that can restyle the page just from a description. Here's how:
+
+**Install it once:**
+```bash
+npm install -g @anthropic-ai/claude-code
+```
+
+**Open it in the project folder:**
+```bash
+cd config-2026
+claude
+```
+
+**Then paste this prompt** (fill in the blanks):
+
+```
+I'm a designer on the Config 2026 site. My page file is at designers/[your-name].tsx.
+
+Restyle my page to match this vibe:
+
+Overall aesthetic: [e.g. "warm and editorial", "cold and brutalist", "dreamy and maximal"]
+Color palette: [e.g. "deep burgundy and cream", "electric blue and black", "earthy terracotta"]
+Font feel: [e.g. "bold serif headlines", "clean Swiss grotesque", "mixed weights, editorial"]
+Layout: [e.g. "keep it simple", "go wild — use the full screen", "big type, minimal everything else"]
+Anything else: [e.g. "I want my photo as a full-bleed background", "add a subtle animation", "make it feel like a magazine spread"]
+
+Keep the HERO_QUOTE, LEARNINGS, and CLOSING text exactly as-is — only change the visual design.
+Don't add placeholder content. Run the dev server if you need to check the result.
+```
+
+Claude Code will write and edit the file directly. Watch it work, then check the browser preview. If something's off, just describe the tweak — it's a back-and-forth conversation.
+
+---
+
 ## Level 1 — Just update the words
 
 Open `designers/[name].tsx`. At the very top there are three constants. These are the only things that *need* to change:
