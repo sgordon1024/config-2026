@@ -20,38 +20,37 @@ const HERO_QUOTE = "Config reminded me that the best systems leave room for the 
 const LEARNINGS = [
   {
     tag: "Variables & Tokens",
-    talk: "\"Tokens Are Dead, Long Live Tokens\" — Karim Halabi, Figma",
+    talk: "Tokens Are Dead, Long Live Tokens / Karim Halabi, Figma",
     title: "It was never about the name",
     body: "Karim spent 40 minutes destroying every token naming convention I've ever used and replacing them with something better: intention. The token doesn't describe the color. It describes the decision. I've already rewritten half our system.",
   },
   {
     tag: "Systems Thinking",
-    talk: "\"When Your System Becomes a Cage\" — Jina Anne",
+    talk: "When Your System Becomes a Cage / Jina Anne",
     title: "A system that can't say no is just a rulebook",
-    body: "Jina's talk hit like a gut punch. She made the case that the most successful systems she's seen all have an explicit escape hatch — a way for designers to break the rules and document why. We've never built that in. We're building it now.",
+    body: "Jina's talk hit like a gut punch. She made the case that the most successful systems she's seen all have an explicit escape hatch: a way for designers to break the rules and document why. We've never built that in. We're building it now.",
   },
   {
     tag: "AI + Design",
-    talk: "\"Designing With, Not For\" — Keynote, Day 2",
+    talk: "Designing With, Not For / Keynote, Day 2",
     title: "The model doesn't know what matters",
     body: "The keynote on AI in design kept circling back to one idea: AI is very good at knowing what's possible and very bad at knowing what's important. That gap is where designers live. I wrote \"designers decide what matters\" on my hand and didn't wash it off all day.",
   },
   {
     tag: "Craft & Courage",
-    talk: "\"On Finishing Things\" — Frank Chimero",
+    talk: "On Finishing Things / Frank Chimero",
     title: "The best talks were personal",
-    body: "Frank talked for 30 minutes about a project he never shipped. No product lesson, no framework, no takeaway — just a story about making something and letting it go. It got a standing ovation. Every session that stayed with me had a moment of vulnerability in it.",
+    body: "Frank talked for 30 minutes about a project he never shipped. No product lesson, no framework, no takeaway. Just a story about making something and letting it go. It got a standing ovation. Every session that stayed with me had a moment of vulnerability in it.",
   },
   {
     tag: "Team & Process",
-    talk: "\"The Handoff Is a Lie\" — Panel, Main Stage",
+    talk: "The Handoff Is a Lie / Panel, Main Stage",
     title: "Design systems aren't finish lines",
-    body: "Four design system leads. One recurring theme: the systems that thrive are the ones where the people who built them never stopped tending to them. Not because the work was unfinished — because the product never stopped changing.",
+    body: "Four design system leads. One recurring theme: the systems that thrive are the ones where the people who built them never stopped tending to them. Not because the work was unfinished. Because the product never stopped changing.",
   },
 ]
 
 const CLOSING = "I came for the craft talks. I left thinking about courage."
-
 const PULL_QUOTE = "The model doesn't know what matters. That gap is where designers live."
 
 const fadeUp = {
@@ -154,70 +153,151 @@ export default function MayaPage({ designer }: { designer: Designer }) {
         </p>
       </motion.div>
 
-      {/* Learnings */}
-      <section className="py-8">
-        {LEARNINGS.map((item, i) => (
-          <motion.article
-            key={i}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-40px" }}
-            variants={fadeUp}
-            transition={{ duration: 0.7 }}
-            className="px-8 md:px-20 py-16 border-b"
-            style={{ borderColor: "rgba(255,255,255,0.06)" }}
-          >
-            <div className="max-w-3xl" style={{ marginLeft: "auto", marginRight: "auto" }}>
-              <div className="flex items-center gap-4 mb-4">
-                <span
-                  className="text-xs uppercase tracking-widest font-medium px-2 py-1"
-                  style={{
-                    color: "#C9A96E",
-                    border: "1px solid rgba(201,169,110,0.3)",
-                    fontFamily: mono.style.fontFamily,
-                  }}
-                >
-                  {item.tag}
-                </span>
-                <span
-                  className="text-xs"
-                  style={{ color: "rgba(255,255,255,0.2)", fontFamily: mono.style.fontFamily }}
-                >
-                  0{i + 1} / 0{LEARNINGS.length}
-                </span>
-              </div>
-
-              <p
-                className="text-xs mb-6 leading-relaxed"
-                style={{
-                  color: "rgba(255,255,255,0.25)",
-                  fontFamily: mono.style.fontFamily,
-                  letterSpacing: "0.05em",
-                }}
+      {/* Learnings 01 + 02 */}
+      {LEARNINGS.slice(0, 2).map((item, i) => (
+        <motion.article
+          key={i}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-40px" }}
+          variants={fadeUp}
+          transition={{ duration: 0.7 }}
+          className="px-8 md:px-20 py-16 border-b"
+          style={{ borderColor: "rgba(255,255,255,0.06)" }}
+        >
+          <div className="max-w-3xl mx-auto">
+            <div className="flex items-center gap-4 mb-4">
+              <span
+                className="text-xs uppercase tracking-widest font-medium px-2 py-1"
+                style={{ color: "#C9A96E", border: "1px solid rgba(201,169,110,0.3)", fontFamily: mono.style.fontFamily }}
               >
-                {item.talk}
-              </p>
-
-              <h2
-                className="font-bold mb-5 leading-tight"
-                style={{
-                  fontFamily: serif.style.fontFamily,
-                  fontSize: "clamp(26px, 3.5vw, 44px)",
-                }}
-              >
-                {item.title}
-              </h2>
-
-              <p
-                className="text-lg leading-relaxed"
-                style={{ color: "rgba(255,255,255,0.5)", fontFamily: sans.style.fontFamily, fontWeight: 300 }}
-              >
-                {item.body}
-              </p>
+                {item.tag}
+              </span>
+              <span className="text-xs" style={{ color: "rgba(255,255,255,0.2)", fontFamily: mono.style.fontFamily }}>
+                0{i + 1} / 0{LEARNINGS.length}
+              </span>
             </div>
-          </motion.article>
-        ))}
-      </section>
+            <p className="text-xs mb-6 leading-relaxed" style={{ color: "rgba(255,255,255,0.25)", fontFamily: mono.style.fontFamily, letterSpacing: "0.05em" }}>
+              {item.talk}
+            </p>
+            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: serif.style.fontFamily, fontSize: "clamp(26px, 3.5vw, 44px)" }}>
+              {item.title}
+            </h2>
+            <p className="text-lg leading-relaxed font-light" style={{ color: "rgba(255,255,255,0.5)" }}>
+              {item.body}
+            </p>
+          </div>
+        </motion.article>
+      ))}
+
+      {/* B-roll: Config event photo */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        transition={{ duration: 0.9 }}
+        className="overflow-hidden"
+        style={{ maxHeight: 480 }}
+      >
+        <img
+          src={`${BASE}/designers/config-event.png`}
+          alt="Config 2026"
+          className="w-full object-cover"
+          style={{ filter: "grayscale(1) contrast(1.1) brightness(0.7)", objectPosition: "center 40%" }}
+        />
+      </motion.div>
+
+      {/* Learnings 03 + 04 */}
+      {LEARNINGS.slice(2, 4).map((item, i) => (
+        <motion.article
+          key={i + 2}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-40px" }}
+          variants={fadeUp}
+          transition={{ duration: 0.7 }}
+          className="px-8 md:px-20 py-16 border-b"
+          style={{ borderColor: "rgba(255,255,255,0.06)" }}
+        >
+          <div className="max-w-3xl mx-auto">
+            <div className="flex items-center gap-4 mb-4">
+              <span
+                className="text-xs uppercase tracking-widest font-medium px-2 py-1"
+                style={{ color: "#C9A96E", border: "1px solid rgba(201,169,110,0.3)", fontFamily: mono.style.fontFamily }}
+              >
+                {item.tag}
+              </span>
+              <span className="text-xs" style={{ color: "rgba(255,255,255,0.2)", fontFamily: mono.style.fontFamily }}>
+                0{i + 3} / 0{LEARNINGS.length}
+              </span>
+            </div>
+            <p className="text-xs mb-6 leading-relaxed" style={{ color: "rgba(255,255,255,0.25)", fontFamily: mono.style.fontFamily, letterSpacing: "0.05em" }}>
+              {item.talk}
+            </p>
+            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: serif.style.fontFamily, fontSize: "clamp(26px, 3.5vw, 44px)" }}>
+              {item.title}
+            </h2>
+            <p className="text-lg leading-relaxed font-light" style={{ color: "rgba(255,255,255,0.5)" }}>
+              {item.body}
+            </p>
+          </div>
+        </motion.article>
+      ))}
+
+      {/* Config graphic strip */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        transition={{ duration: 0.8 }}
+        className="overflow-hidden opacity-60"
+      >
+        <img
+          src={`${BASE}/designers/config-graphic.png`}
+          alt=""
+          aria-hidden
+          className="w-full"
+        />
+      </motion.div>
+
+      {/* Learning 05 */}
+      {LEARNINGS.slice(4).map((item, i) => (
+        <motion.article
+          key={i + 4}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-40px" }}
+          variants={fadeUp}
+          transition={{ duration: 0.7 }}
+          className="px-8 md:px-20 py-16 border-b"
+          style={{ borderColor: "rgba(255,255,255,0.06)" }}
+        >
+          <div className="max-w-3xl mx-auto">
+            <div className="flex items-center gap-4 mb-4">
+              <span
+                className="text-xs uppercase tracking-widest font-medium px-2 py-1"
+                style={{ color: "#C9A96E", border: "1px solid rgba(201,169,110,0.3)", fontFamily: mono.style.fontFamily }}
+              >
+                {item.tag}
+              </span>
+              <span className="text-xs" style={{ color: "rgba(255,255,255,0.2)", fontFamily: mono.style.fontFamily }}>
+                0{i + 5} / 0{LEARNINGS.length}
+              </span>
+            </div>
+            <p className="text-xs mb-6 leading-relaxed" style={{ color: "rgba(255,255,255,0.25)", fontFamily: mono.style.fontFamily, letterSpacing: "0.05em" }}>
+              {item.talk}
+            </p>
+            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: serif.style.fontFamily, fontSize: "clamp(26px, 3.5vw, 44px)" }}>
+              {item.title}
+            </h2>
+            <p className="text-lg leading-relaxed font-light" style={{ color: "rgba(255,255,255,0.5)" }}>
+              {item.body}
+            </p>
+          </div>
+        </motion.article>
+      ))}
 
       {/* Pull quote */}
       <motion.section
@@ -242,45 +322,46 @@ export default function MayaPage({ designer }: { designer: Designer }) {
         >
           &ldquo;{PULL_QUOTE}&rdquo;
         </p>
-        <p
-          className="mt-8 text-xs uppercase tracking-widest"
-          style={{ color: "#C9A96E", fontFamily: mono.style.fontFamily }}
-        >
+        <p className="mt-8 text-xs uppercase tracking-widest" style={{ color: "#C9A96E", fontFamily: mono.style.fontFamily }}>
           Day 2 Keynote
         </p>
       </motion.section>
 
-      {/* Photo interlude (if photo exists) */}
-      {designer.photo && (
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
-          transition={{ duration: 0.8 }}
-          className="px-8 md:px-20 py-16"
+      {/* Second portrait */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeUp}
+        transition={{ duration: 0.9 }}
+        className="flex"
+      >
+        <div className="w-full md:w-1/2">
+          <img
+            src={`${BASE}/designers/maya-2.jpg`}
+            alt={designer.name}
+            className="w-full"
+            style={{
+              filter: "grayscale(1) contrast(1.1) brightness(0.8)",
+              aspectRatio: "4/5",
+              objectFit: "cover",
+              objectPosition: "top",
+              display: "block",
+            }}
+          />
+        </div>
+        <div
+          className="hidden md:flex w-1/2 items-end p-16"
+          style={{ background: "#0a0a0a" }}
         >
-          <div className="max-w-sm mx-auto">
-            <img
-              src={`${BASE}${designer.photo}`}
-              alt={designer.name}
-              className="w-full"
-              style={{
-                filter: "grayscale(1) contrast(1.15)",
-                aspectRatio: "3/4",
-                objectFit: "cover",
-                objectPosition: "top",
-              }}
-            />
-            <p
-              className="mt-4 text-xs text-center uppercase tracking-widest"
-              style={{ color: "rgba(255,255,255,0.2)", fontFamily: mono.style.fontFamily }}
-            >
-              San Francisco, May 2026
-            </p>
-          </div>
-        </motion.div>
-      )}
+          <p
+            className="text-sm leading-loose uppercase tracking-[0.15em]"
+            style={{ color: "rgba(255,255,255,0.2)", fontFamily: mono.style.fontFamily }}
+          >
+            San Francisco<br />May 2026
+          </p>
+        </div>
+      </motion.div>
 
       {/* Closing */}
       <motion.section
@@ -306,21 +387,10 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           &ldquo;{CLOSING}&rdquo;
         </p>
 
-        <div
-          className="mt-12 pt-12 flex items-center gap-6"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
-        >
+        <div className="mt-12 pt-12 flex items-center gap-6" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
           <div>
-            <p
-              className="font-black text-lg"
-              style={{ fontFamily: serif.style.fontFamily }}
-            >
-              {designer.name}
-            </p>
-            <p
-              className="text-xs uppercase tracking-widest mt-1"
-              style={{ color: "rgba(255,255,255,0.3)", fontFamily: mono.style.fontFamily }}
-            >
+            <p className="font-black text-lg" style={{ fontFamily: serif.style.fontFamily }}>{designer.name}</p>
+            <p className="text-xs uppercase tracking-widest mt-1" style={{ color: "rgba(255,255,255,0.3)", fontFamily: mono.style.fontFamily }}>
               {designer.role}
             </p>
           </div>
