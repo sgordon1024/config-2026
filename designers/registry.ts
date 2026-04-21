@@ -93,4 +93,11 @@ export const designers: Designer[] = [
     photo:     "/designers/steve-gordon.jpg",
     cardAccent: CONFIG_COLORS.orange,
   },
+  {
+    slug:      "maya",
+    name:      "Maya",
+    role:      "Product Designer",
+    photo:     "",
+    cardAccent: "#A78BFA",
+  },
 ]

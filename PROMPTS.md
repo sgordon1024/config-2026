@@ -253,6 +253,10 @@ The live site updates in about 60 seconds.
 
 ---
 
+## See an example
+
+Check out [Maya's page](https://sgordon1024.github.io/config-2026/designers/maya) to see what a finished page can look like. The source is at [designers/maya.tsx](designers/maya.tsx) if you want to read the code behind it.
+
 ## Going deeper
 
 Want to edit the code directly or understand what Claude Code is doing? See [TECHNICAL.md](TECHNICAL.md).

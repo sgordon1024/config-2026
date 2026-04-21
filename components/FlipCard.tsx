@@ -5,7 +5,7 @@ import type { Designer } from "@/designers/registry"
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
-// 11 unique tiles — one per designer slot, in order of registry
+// 12 unique tiles — one per designer slot, in order of registry
 const TILES: { bg: string; shape: ShapeId; dark: boolean }[] = [
   { bg: "#FF5A1F", shape: "dots",        dark: false }, // Agatha     — orange, dot grid
   { bg: "#FFE600", shape: "rects",       dark: false }, // Courtney   — yellow, tumbling rects
@@ -18,11 +18,12 @@ const TILES: { bg: string; shape: ShapeId; dark: boolean }[] = [
   { bg: "#F2B8C6", shape: "triangles",   dark: false }, // Quan       — pink, triangle cluster
   { bg: "#FF8CB4", shape: "stripes",     dark: false }, // Ryan       — hot pink, diagonal stripes
   { bg: "#B8E4FF", shape: "petals",      dark: false }, // Steve      — ice blue, petal burst
+  { bg: "#A78BFA", shape: "cross",       dark: false }, // Maya       — lavender, plus grid
 ]
 
 type ShapeId =
   | "dots" | "rects" | "blob" | "asterisk" | "waves"
-  | "offcircle" | "diamonds" | "arcs" | "triangles" | "stripes" | "petals"
+  | "offcircle" | "diamonds" | "arcs" | "triangles" | "stripes" | "petals" | "cross"
 
 interface FlipCardProps {
   designer: Designer
@@ -207,6 +208,15 @@ function TileShape({ shape, dark }: { shape: ShapeId; dark: boolean }) {
             />
           ))}
           <circle cx="110" cy="150" r="22" fill={s} />
+        </>}
+
+        {shape === "cross" && <>
+          <rect x="98"  y="20"  width="24" height="260" rx="12" fill={s} />
+          <rect x="20"  y="138" width="180" height="24" rx="12" fill={s} />
+          <rect x="155" y="210" width="14" height="70"  rx="7"  fill={s2} />
+          <rect x="130" y="235" width="64" height="14"  rx="7"  fill={s2} />
+          <rect x="36"  y="58"  width="12" height="60"  rx="6"  fill={s2} />
+          <rect x="16"  y="78"  width="52" height="12"  rx="6"  fill={s2} />
         </>}
 
       </svg>
