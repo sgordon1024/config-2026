@@ -35,7 +35,7 @@ const CLOSING = "I came for the craft talks. I left thinking about courage."
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0 },
 }
 
 export default function MayaPage({ designer }: { designer: Designer }) {
@@ -124,6 +124,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={fadeUp}
+              transition={{ duration: 0.75 }}
               className="grid gap-6 md:gap-16"
               style={{ gridTemplateColumns: "56px 1fr" }}
             >
