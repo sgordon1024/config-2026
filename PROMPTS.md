@@ -8,25 +8,15 @@ This guide gives each designer a ready-to-use prompt. No coding required.
 
 ## Setup
 
-**1. Install Claude Code** (one-time):
+Run this one command in Terminal. It installs everything automatically:
+
 ```bash
-npm install -g @anthropic-ai/claude-code
+curl -fsSL https://raw.githubusercontent.com/sgordon1024/config-2026/main/setup.sh | bash
 ```
 
-**2. Clone the project and open Claude Code:**
-```bash
-git clone https://github.com/sgordon1024/config-2026.git
-cd config-2026
-npm install
-claude
-```
+When it finishes, it'll tell you exactly what to do next.
 
-**3. In a separate terminal, start the preview:**
-```bash
-npm run dev
-```
-
-Then open **http://localhost:3000/designers/[your-name]** — it updates live as Claude makes changes.
+> **Never run random scripts from the internet** — but this one is ours. You can [read it on GitHub](https://github.com/sgordon1024/config-2026/blob/main/setup.sh) before running if you want.
 
 ---
 
