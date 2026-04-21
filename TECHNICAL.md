@@ -1,4 +1,4 @@
-# Config 2026 — Technical Reference
+# Config 2026: Technical Reference
 
 For designers who want to edit code directly, or who want to understand what Claude Code is doing under the hood.
 
@@ -20,7 +20,7 @@ public/
 
 ## Updating content
 
-At the top of every designer file there are three constants — these are the only things that need to change for a basic update:
+At the top of every designer file there are three constants. These are the only things that need to change for a basic update:
 
 ```tsx
 const HERO_QUOTE = "Write a big takeaway or theme here."
@@ -83,7 +83,7 @@ const font = Space_Grotesk({ subsets: ["latin"], weight: ["400", "700"] })
 | Bold/graphic | `Bebas_Neue` |
 | Swiss | `Space_Grotesk` |
 
-> Google Fonts names use underscores in code but spaces in the UI — `Space_Grotesk` = "Space Grotesk".
+> Google Fonts names use underscores in code but spaces in the UI. `Space_Grotesk` = "Space Grotesk".
 
 ---
 
@@ -128,7 +128,7 @@ Put an image in `public/designers/` then reference it in a `<section>`:
 
 ## Layout
 
-Each page file is a React component — the layout is fully replaceable. The only required element is the back link:
+Each page file is a React component. The layout is fully replaceable. The only required element is the back link:
 
 ```tsx
 <Link href="/" className="fixed top-6 left-6 text-sm text-white/40 hover:text-white z-50">

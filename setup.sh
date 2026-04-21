@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Config 2026 — Setup Script
+# Config 2026 Setup Script
 # Run this once to get everything installed.
 
 set -e
@@ -19,7 +19,7 @@ info() { echo -e "${BLUE}→ $1${RESET}"; }
 warn() { echo -e "${YELLOW}! $1${RESET}"; }
 
 echo ""
-echo "  Config 2026 — Setup"
+echo "  Config 2026 Setup"
 echo "  ────────────────────"
 echo ""
 

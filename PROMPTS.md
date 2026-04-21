@@ -1,4 +1,4 @@
-# Config 2026 — Designer Guide
+# Config 2026: Designer Guide
 
 Each designer has a personal page on the Config 2026 site. The fastest way to make it your own is to describe what you want to an AI and let it write the code.
 
@@ -16,13 +16,13 @@ curl -fsSL https://raw.githubusercontent.com/sgordon1024/config-2026/main/setup.
 
 When it finishes, it'll tell you exactly what to do next.
 
-> **Never run random scripts from the internet** — but this one is ours. You can [read it on GitHub](https://github.com/sgordon1024/config-2026/blob/main/setup.sh) before running if you want.
+> **Never run random scripts from the internet.** This one is ours though. You can [read it on GitHub](https://github.com/sgordon1024/config-2026/blob/main/setup.sh) before running if you want.
 
 ---
 
 ## How it works
 
-Find your section below, copy the prompt, fill in the blanks, and paste it into Claude Code. It will edit your file directly. If something's off, just describe the tweak — it's a back-and-forth conversation.
+Find your section below, copy the prompt, fill in the blanks, and paste it into Claude Code. It will edit your file directly. If something's off, just describe the tweak. It's a back-and-forth conversation.
 
 The only rules baked into every prompt:
 - Claude keeps your written content (quotes, learnings, closing thought) exactly as-is
@@ -259,4 +259,4 @@ Want to edit the code directly or understand what Claude Code is doing? See [TEC
 
 ## Need help?
 
-Ping Steve — or drop a screenshot in Slack and we'll sort it out.
+Ping Steve or drop a screenshot in Slack and we'll sort it out.
