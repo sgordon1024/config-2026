@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import dynamic from "next/dynamic"
 import "./globals.css"
 
 const inter = Inter({
@@ -8,6 +9,8 @@ const inter = Inter({
   weight: ["400", "700", "900"],
   display: "swap",
 })
+
+const StylePanel = dynamic(() => import("@/components/StylePanel"), { ssr: false })
 
 export const metadata: Metadata = {
   title: "Config 2026 — Designer Takeaways",
@@ -20,10 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body
-        className="min-h-full bg-black text-white"
+        className="min-h-full text-white"
         style={{ fontFamily: "var(--font-inter), sans-serif" }}
       >
         {children}
+        <StylePanel />
       </body>
     </html>
   )
