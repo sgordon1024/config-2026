@@ -1,15 +1,15 @@
-# Config 2026 — Your Designer Page
+# Config 2026 — Designer Guide
 
-Welcome! You have a personal page on our Config 2026 site. This guide walks you through making it yours — from just swapping out text, all the way to full creative control over layout, fonts, and imagery.
+Each designer has a personal page on the Config 2026 site. This guide walks through how to make it your own — from just swapping out text, all the way to full creative control over layout, fonts, and imagery.
 
-**Your file lives at:** `designers/[your-name].tsx`  
-**Your photo lives at:** `public/designers/[your-name].jpg` (or `.png`)
+**Page file:** `designers/[name].tsx`  
+**Photo file:** `public/designers/[name].jpg` (or `.png`)
 
 ---
 
 ## Before you start
 
-You'll need to run the project locally to preview your changes before publishing.
+The project needs to run locally to preview changes before publishing.
 
 **One-time setup:**
 ```bash
@@ -19,18 +19,18 @@ npm install
 npm run dev
 ```
 
-Then open **http://localhost:3000/designers/[your-name]** in your browser.
+Then open **http://localhost:3000/designers/[name]** in a browser.
 
-Any time you save a file, the browser updates instantly — no refresh needed.
+Any time a file is saved, the browser updates instantly — no refresh needed.
 
 ---
 
 ## Level 1 — Just update the words
 
-Open your `designers/[your-name].tsx` file. At the very top you'll see three constants. These are the only things you *need* to change:
+Open `designers/[name].tsx`. At the very top there are three constants. These are the only things that *need* to change:
 
 ```tsx
-const HERO_QUOTE = "Write your big takeaway or theme here."
+const HERO_QUOTE = "Write a big takeaway or theme here."
 
 const LEARNINGS = [
   {
@@ -43,7 +43,7 @@ const LEARNINGS = [
 const CLOSING = "One final thought to leave the reader with."
 ```
 
-Edit those, save, and you're done. Ship it.
+Edit those, save, and ship it.
 
 ---
 
@@ -51,7 +51,7 @@ Edit those, save, and you're done. Ship it.
 
 ### Change background color
 
-Find the `<main>` tag near the bottom of your file. Change the `background` style:
+Find the `<main>` tag near the bottom of the file. Change the `background` style:
 
 ```tsx
 // Solid color
@@ -68,9 +68,9 @@ Need color inspiration? Try [coolors.co](https://coolors.co) or [uicolors.app](h
 
 ### Change the font
 
-1. Go to [fonts.google.com](https://fonts.google.com), find a font you like, and note its name (e.g. `"Space Grotesk"`)
+1. Go to [fonts.google.com](https://fonts.google.com), find a font, and note its name (e.g. `"Space Grotesk"`)
 
-2. At the top of your file, add this import:
+2. At the top of the file, add this import:
 
 ```tsx
 import { Space_Grotesk } from "next/font/google"
@@ -78,7 +78,7 @@ import { Space_Grotesk } from "next/font/google"
 const font = Space_Grotesk({ subsets: ["latin"], weight: ["400", "700"] })
 ```
 
-3. Apply it to your `<main>` tag:
+3. Apply it to the `<main>` tag:
 
 ```tsx
 <main className={font.className} style={{ ... }}>
@@ -99,15 +99,15 @@ Some good pairings to try:
 
 ## Level 3 — Imagery
 
-### Swap your profile photo
+### Swap the profile photo
 
-Drop a new file into `public/designers/` with the exact same filename as your current one. The site will use it automatically — no code change needed.
+Drop a new file into `public/designers/` with the exact same filename as the current one. The site will use it automatically — no code change needed.
 
 Best results: square crop, high contrast, at least 800×800px.
 
 ### Add a full-bleed background image
 
-Put your image in `public/designers/` (e.g. `public/designers/my-background.jpg`) then in your `<section>`:
+Put an image in `public/designers/` (e.g. `public/designers/my-background.jpg`) then in the `<section>`:
 
 ```tsx
 <section
@@ -121,16 +121,16 @@ Put your image in `public/designers/` (e.g. `public/designers/my-background.jpg`
   {/* dark overlay so text stays readable */}
   <div className="absolute inset-0 bg-black/50" />
   <div className="relative z-10 ...">
-    {/* your content */}
+    {/* content */}
   </div>
 </section>
 ```
 
 > **Note:** On the live site, always prefix image paths with `/config-2026/` (e.g. `/config-2026/designers/my-image.jpg`). Locally, use just `/designers/my-image.jpg`.
 
-### Reference your profile photo anywhere
+### Reference the profile photo anywhere
 
-Your photo path is available via the `designer` prop:
+The photo path is available via the `designer` prop:
 
 ```tsx
 <img
@@ -144,11 +144,11 @@ Your photo path is available via the `designer` prop:
 
 ## Level 4 — Full creative control
 
-Your file is a React component — you have complete control. Here are some ideas:
+Each page file is a React component — there's complete control over the layout. Some ideas:
 
 ### Change the layout entirely
 
-Delete everything inside `<main>` and start fresh. The only requirement is that you keep the back link so visitors can return home:
+Delete everything inside `<main>` and start fresh. The only requirement is keeping the back link so visitors can return home:
 
 ```tsx
 <Link href="/" className="fixed top-6 left-6 text-sm text-white/40 hover:text-white z-50">
@@ -200,17 +200,17 @@ import { motion } from "framer-motion"
 
 ---
 
-## Publishing your changes
+## Publishing changes
 
-Once you're happy with your page:
+Once the page looks good:
 
 ```bash
 git add .
-git commit -m "Update my designer page"
+git commit -m "Update designer page"
 git push
 ```
 
-GitHub Actions will rebuild and deploy automatically. Your live page updates in about 60 seconds.
+GitHub Actions will rebuild and deploy automatically. The live page updates in about 60 seconds.
 
 ---
 
@@ -218,13 +218,13 @@ GitHub Actions will rebuild and deploy automatically. Your live page updates in 
 
 | What | Where |
 |------|-------|
-| Your page file | `designers/[your-name].tsx` |
-| Your photo | `public/designers/[your-name].jpg` |
+| Page file | `designers/[name].tsx` |
+| Photo | `public/designers/[name].jpg` |
 | Shared data (name, role) | `designers/registry.ts` |
 | Template to copy from | `designers/_template.tsx` |
 | Live site | https://sgordon1024.github.io/config-2026/ |
-| Your page | https://sgordon1024.github.io/config-2026/designers/[your-name] |
+| Page URL | https://sgordon1024.github.io/config-2026/designers/[name] |
 
 ## Need help?
 
-Ping Steve — or if you get stuck on something specific, drop the error message in Slack and we'll sort it out.
+Ping Steve — or drop the error message in Slack and we'll sort it out.
