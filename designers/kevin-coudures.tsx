@@ -1,5 +1,7 @@
 "use client"
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+
 /**
  * DESIGNER PAGE TEMPLATE
  *
@@ -8,7 +10,7 @@
  * The `designer` prop gives you your name, photo path, and role automatically.
  */
 
-import Image from "next/image"
+
 import Link from "next/link"
 import type { Designer } from "./registry"
 
@@ -49,12 +51,7 @@ export default function TemplatePage({ designer }: { designer: Designer }) {
       {/* Hero */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-8 text-center">
         {designer.photo && (
-          <Image
-            src={designer.photo}
-            alt={designer.name}
-            fill
-            className="object-cover opacity-20"
-          />
+          <img src={`${BASE}${designer.photo}`} alt={designer.name} className="absolute inset-0 w-full h-full object-cover opacity-20" />
         )}
         <div className="relative z-10 max-w-2xl">
           <p className="text-sm uppercase tracking-widest text-white/50 mb-4">

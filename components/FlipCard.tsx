@@ -1,8 +1,9 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import Image from "next/image"
 import type { Designer } from "@/designers/registry"
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 // 11 unique tiles — one per designer slot, in order of registry
 const TILES: { bg: string; shape: ShapeId; dark: boolean }[] = [
@@ -81,7 +82,7 @@ export default function FlipCard({ designer, tileIndex = 0 }: FlipCardProps) {
             }}
           >
             {designer.photo
-              ? <Image src={designer.photo} alt={designer.name} fill sizes="220px" className="object-cover" />
+              ? <img src={`${BASE}${designer.photo}`} alt={designer.name} className="absolute inset-0 w-full h-full object-cover" />
               : <div className="absolute inset-0 bg-zinc-700" />
             }
             {/* grain */}
