@@ -35,7 +35,7 @@ const CLOSING = "I came for the craft talks. I left thinking about courage."
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: [0.25, 0.1, 0.25, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.75, ease: "easeOut" } },
 }
 
 export default function MayaPage({ designer }: { designer: Designer }) {
@@ -87,7 +87,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.9, delay: 0.45, ease: "easeOut" }}
             className="font-black leading-none mb-10"
             style={{
               fontFamily: serif.style.fontFamily,
@@ -101,7 +101,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.9, delay: 0.65, ease: "easeOut" }}
             className="max-w-xl text-xl md:text-2xl leading-relaxed"
             style={{
               fontFamily: serif.style.fontFamily,
