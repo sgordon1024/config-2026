@@ -141,8 +141,8 @@ export default function MayaPage({ designer }: { designer: Designer }) {
         viewport={{ once: true }}
         variants={fadeUp}
         transition={{ duration: 0.6 }}
-        className="px-8 md:px-20 py-16 border-t border-b"
-        style={{ borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
+        className="px-8 md:px-20 border-t border-b"
+        style={{ paddingTop: "calc(var(--sp-section-spacing) * 0.5)", paddingBottom: "calc(var(--sp-section-spacing) * 0.5)", borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
       >
         <p
           className="text-sm uppercase tracking-[0.2em] max-w-3xl leading-loose"
@@ -162,10 +162,10 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           viewport={{ once: true, margin: "-40px" }}
           variants={fadeUp}
           transition={{ duration: 0.7 }}
-          className="px-8 md:px-20 py-16 border-b"
-          style={{ borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
+          className="px-8 md:px-20 border-b"
+          style={{ paddingTop: "calc(var(--sp-section-spacing) * 0.5)", paddingBottom: "calc(var(--sp-section-spacing) * 0.5)", borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
         >
-          <div className="max-w-3xl mx-auto">
+          <div style={{ maxWidth: "var(--sp-content-width)", margin: "0 auto" }}>
             <div className="flex items-center gap-4 mb-4">
               <span
                 className="text-xs uppercase tracking-widest font-medium px-2 py-1"
@@ -217,10 +217,10 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           viewport={{ once: true, margin: "-40px" }}
           variants={fadeUp}
           transition={{ duration: 0.7 }}
-          className="px-8 md:px-20 py-16 border-b"
-          style={{ borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
+          className="px-8 md:px-20 border-b"
+          style={{ paddingTop: "calc(var(--sp-section-spacing) * 0.5)", paddingBottom: "calc(var(--sp-section-spacing) * 0.5)", borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
         >
-          <div className="max-w-3xl mx-auto">
+          <div style={{ maxWidth: "var(--sp-content-width)", margin: "0 auto" }}>
             <div className="flex items-center gap-4 mb-4">
               <span
                 className="text-xs uppercase tracking-widest font-medium px-2 py-1"
@@ -271,10 +271,10 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           viewport={{ once: true, margin: "-40px" }}
           variants={fadeUp}
           transition={{ duration: 0.7 }}
-          className="px-8 md:px-20 py-16 border-b"
-          style={{ borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
+          className="px-8 md:px-20 border-b"
+          style={{ paddingTop: "calc(var(--sp-section-spacing) * 0.5)", paddingBottom: "calc(var(--sp-section-spacing) * 0.5)", borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
         >
-          <div className="max-w-3xl mx-auto">
+          <div style={{ maxWidth: "var(--sp-content-width)", margin: "0 auto" }}>
             <div className="flex items-center gap-4 mb-4">
               <span
                 className="text-xs uppercase tracking-widest font-medium px-2 py-1"
@@ -306,8 +306,8 @@ export default function MayaPage({ designer }: { designer: Designer }) {
         viewport={{ once: true, margin: "-60px" }}
         variants={fadeUp}
         transition={{ duration: 0.8 }}
-        className="px-8 md:px-20 py-32 text-center"
-        style={{ background: "radial-gradient(ellipse at center, #0f0520 0%, #000 70%)" }}
+        className="px-8 md:px-20 text-center"
+        style={{ paddingTop: "var(--sp-section-spacing)", paddingBottom: "var(--sp-section-spacing)", background: "radial-gradient(ellipse at center, #0f0520 0%, #000 70%)" }}
       >
         <p
           className="mx-auto font-black leading-none"
@@ -370,8 +370,8 @@ export default function MayaPage({ designer }: { designer: Designer }) {
         viewport={{ once: true, margin: "-60px" }}
         variants={fadeUp}
         transition={{ duration: 0.8 }}
-        className="px-8 md:px-20 py-32"
-        style={{ borderTop: "1px solid rgba(255,255,255,var(--sp-border-opacity))" }}
+        className="px-8 md:px-20"
+        style={{ paddingTop: "var(--sp-section-spacing)", paddingBottom: "var(--sp-section-spacing)", borderTop: "1px solid rgba(255,255,255,var(--sp-border-opacity))" }}
       >
         <p
           className="font-bold leading-tight"
