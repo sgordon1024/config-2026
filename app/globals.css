@@ -20,9 +20,18 @@ html {
 
 body {
   background-color: var(--sp-bg);
-  color: rgba(255, 255, 255, var(--sp-text-opacity));
-  /* sp-font-family is only set by the panel on designer pages — falls back to Inter */
+  color: white;
   font-family: var(--sp-font-family, var(--font-inter), sans-serif);
+}
+
+/* Brightness overlay — dims everything uniformly when slider is below 100% */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, calc(1 - var(--sp-text-opacity, 1)));
+  pointer-events: none;
+  z-index: 9997;
 }
 
 /* Film grain overlay — activated when panel sets --sp-grain-opacity to 1 */

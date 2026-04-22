@@ -111,7 +111,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
             className="font-black leading-none mb-10"
             style={{
               fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)",
-              fontSize: "clamp(72px, 13vw, 160px)",
+              fontSize: "clamp(4.5rem, 13vw, 10rem)",
               letterSpacing: "-0.03em",
             }}
           >
@@ -180,7 +180,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
             <p className="text-xs mb-6 leading-relaxed" style={{ color: "rgba(255,255,255,0.25)", fontFamily: mono.style.fontFamily, letterSpacing: "0.05em" }}>
               {item.talk}
             </p>
-            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)", fontSize: "clamp(26px, 3.5vw, 44px)" }}>
+            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)", fontSize: "clamp(1.625rem, 3.5vw, 2.75rem)" }}>
               {item.title}
             </h2>
             <p className="text-lg leading-relaxed font-light" style={{ color: "rgba(255,255,255,0.5)" }}>
@@ -235,7 +235,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
             <p className="text-xs mb-6 leading-relaxed" style={{ color: "rgba(255,255,255,0.25)", fontFamily: mono.style.fontFamily, letterSpacing: "0.05em" }}>
               {item.talk}
             </p>
-            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)", fontSize: "clamp(26px, 3.5vw, 44px)" }}>
+            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)", fontSize: "clamp(1.625rem, 3.5vw, 2.75rem)" }}>
               {item.title}
             </h2>
             <p className="text-lg leading-relaxed font-light" style={{ color: "rgba(255,255,255,0.5)" }}>
@@ -289,7 +289,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
             <p className="text-xs mb-6 leading-relaxed" style={{ color: "rgba(255,255,255,0.25)", fontFamily: mono.style.fontFamily, letterSpacing: "0.05em" }}>
               {item.talk}
             </p>
-            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)", fontSize: "clamp(26px, 3.5vw, 44px)" }}>
+            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)", fontSize: "clamp(1.625rem, 3.5vw, 2.75rem)" }}>
               {item.title}
             </h2>
             <p className="text-lg leading-relaxed font-light" style={{ color: "rgba(255,255,255,0.5)" }}>
@@ -314,7 +314,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           style={{
             fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)",
             fontStyle: "italic",
-            fontSize: "clamp(32px, 5.5vw, 72px)",
+            fontSize: "clamp(2rem, 5.5vw, 4.5rem)",
             color: "rgba(255,255,255,0.9)",
             maxWidth: "900px",
             letterSpacing: "-0.02em",
@@ -378,7 +378,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           style={{
             fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)",
             fontStyle: "italic",
-            fontSize: "clamp(32px, 5vw, 64px)",
+            fontSize: "clamp(2rem, 5vw, 4rem)",
             color: "rgba(255,255,255,0.45)",
             maxWidth: "700px",
             letterSpacing: "-0.02em",
