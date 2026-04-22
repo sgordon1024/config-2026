@@ -290,12 +290,14 @@ export default function StyleGuidePage() {
   )
 }
 
+const monoFamily = mono.style.fontFamily
+
 function Section({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <section style={{ padding: `var(--sp-section-spacing) 48px`, borderBottom: `1px solid rgba(255,255,255,var(--sp-border-opacity))` }}>
       <div style={{ maxWidth: "var(--sp-content-width)", margin: "0 auto" }}>
         <p style={{
-          fontFamily: Space_Mono({ subsets: ["latin"], weight: ["400"] }).style.fontFamily,
+          fontFamily: monoFamily,
           fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase",
           color: "rgba(255,255,255,0.25)", marginBottom: 40,
         }}>
@@ -311,8 +313,8 @@ function TypeRow({ label, sub, children }: { label: string; sub: string; childre
   return (
     <div style={{ paddingTop: 24, borderTop: `1px solid rgba(255,255,255,0.05)` }}>
       <div style={{ marginBottom: 20 }}>
-        <p style={{ fontFamily: Space_Mono({ subsets: ["latin"], weight: ["400"] }).style.fontFamily, fontSize: 10, color: "rgba(255,255,255,0.45)", marginBottom: 4, letterSpacing: "0.08em" }}>{label}</p>
-        <p style={{ fontFamily: Space_Mono({ subsets: ["latin"], weight: ["400"] }).style.fontFamily, fontSize: 9, color: "rgba(255,255,255,0.2)", letterSpacing: "0.06em" }}>{sub}</p>
+        <p style={{ fontFamily: monoFamily, fontSize: 10, color: "rgba(255,255,255,0.45)", marginBottom: 4, letterSpacing: "0.08em" }}>{label}</p>
+        <p style={{ fontFamily: monoFamily, fontSize: 9, color: "rgba(255,255,255,0.2)", letterSpacing: "0.06em" }}>{sub}</p>
       </div>
       {children}
     </div>
@@ -322,7 +324,7 @@ function TypeRow({ label, sub, children }: { label: string; sub: string; childre
 function ComponentRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div style={{ paddingTop: 24, borderTop: `1px solid rgba(255,255,255,0.05)`, display: "flex", flexDirection: "column", gap: 16 }}>
-      <p style={{ fontFamily: Space_Mono({ subsets: ["latin"], weight: ["400"] }).style.fontFamily, fontSize: 10, color: "rgba(255,255,255,0.25)", letterSpacing: "0.1em" }}>{label}</p>
+      <p style={{ fontFamily: monoFamily, fontSize: 10, color: "rgba(255,255,255,0.25)", letterSpacing: "0.1em" }}>{label}</p>
       {children}
     </div>
   )

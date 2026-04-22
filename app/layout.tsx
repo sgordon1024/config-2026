@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import dynamic from "next/dynamic"
 import "./globals.css"
+import StylePanelWrapper from "@/components/StylePanelWrapper"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -9,8 +9,6 @@ const inter = Inter({
   weight: ["400", "700", "900"],
   display: "swap",
 })
-
-const StylePanel = dynamic(() => import("@/components/StylePanel"), { ssr: false })
 
 export const metadata: Metadata = {
   title: "Config 2026 — Designer Takeaways",
@@ -27,7 +25,7 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-inter), sans-serif" }}
       >
         {children}
-        <StylePanel />
+        <StylePanelWrapper />
       </body>
     </html>
   )
