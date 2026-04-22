@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body
         className="min-h-full text-white"
-        style={{ fontFamily: "var(--font-inter), sans-serif" }}
+        style={{ fontFamily: "var(--sp-font-family, var(--font-inter), sans-serif)" }}
       >
         {children}
         <StylePanelWrapper />

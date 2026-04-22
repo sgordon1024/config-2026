@@ -60,7 +60,7 @@ const fadeUp = {
 
 export default function MayaPage({ designer }: { designer: Designer }) {
   return (
-    <main className="min-h-screen text-white" style={{ fontFamily: sans.style.fontFamily, backgroundColor: "var(--sp-bg)" }}>
+    <main className="min-h-screen text-white" style={{ fontFamily: "var(--sp-font-family, DM Sans, sans-serif)", backgroundColor: "var(--sp-bg)" }}>
       <Link
         href="/"
         className="fixed top-6 left-6 text-xs uppercase tracking-[0.2em] text-white/30 hover:text-white/60 transition-colors z-50"
@@ -141,8 +141,8 @@ export default function MayaPage({ designer }: { designer: Designer }) {
         viewport={{ once: true }}
         variants={fadeUp}
         transition={{ duration: 0.6 }}
-        className="px-8 md:px-20 border-t border-b"
-        style={{ paddingTop: "calc(var(--sp-section-spacing) * 0.5)", paddingBottom: "calc(var(--sp-section-spacing) * 0.5)", borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
+        className="px-8 md:px-20"
+        style={{ paddingTop: "calc(var(--sp-section-spacing) * 0.5)", paddingBottom: "calc(var(--sp-section-spacing) * 0.5)", borderTop: "var(--sp-border-width) solid rgba(255,255,255,var(--sp-border-opacity))", borderBottom: "var(--sp-border-width) solid rgba(255,255,255,var(--sp-border-opacity))" }}
       >
         <p
           className="text-sm uppercase tracking-[0.2em] max-w-3xl leading-loose"
@@ -162,14 +162,14 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           viewport={{ once: true, margin: "-40px" }}
           variants={fadeUp}
           transition={{ duration: 0.7 }}
-          className="px-8 md:px-20 border-b"
-          style={{ paddingTop: "calc(var(--sp-section-spacing) * 0.5)", paddingBottom: "calc(var(--sp-section-spacing) * 0.5)", borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
+          className="px-8 md:px-20"
+          style={{ paddingTop: "calc(var(--sp-section-spacing) * 0.5)", paddingBottom: "calc(var(--sp-section-spacing) * 0.5)", borderBottom: "var(--sp-border-width) solid rgba(255,255,255,var(--sp-border-opacity))" }}
         >
           <div style={{ maxWidth: "var(--sp-content-width)", margin: "0 auto" }}>
             <div className="flex items-center gap-4 mb-4">
               <span
                 className="text-xs uppercase tracking-widest font-medium px-2 py-1"
-                style={{ color: "var(--sp-accent)", border: "1px solid color-mix(in srgb, var(--sp-accent) 30%, transparent)", fontFamily: mono.style.fontFamily }}
+                style={{ color: "var(--sp-accent)", border: "var(--sp-border-width) solid color-mix(in srgb, var(--sp-accent) 30%, transparent)", fontFamily: mono.style.fontFamily }}
               >
                 {item.tag}
               </span>
@@ -217,14 +217,14 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           viewport={{ once: true, margin: "-40px" }}
           variants={fadeUp}
           transition={{ duration: 0.7 }}
-          className="px-8 md:px-20 border-b"
-          style={{ paddingTop: "calc(var(--sp-section-spacing) * 0.5)", paddingBottom: "calc(var(--sp-section-spacing) * 0.5)", borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
+          className="px-8 md:px-20"
+          style={{ paddingTop: "calc(var(--sp-section-spacing) * 0.5)", paddingBottom: "calc(var(--sp-section-spacing) * 0.5)", borderBottom: "var(--sp-border-width) solid rgba(255,255,255,var(--sp-border-opacity))" }}
         >
           <div style={{ maxWidth: "var(--sp-content-width)", margin: "0 auto" }}>
             <div className="flex items-center gap-4 mb-4">
               <span
                 className="text-xs uppercase tracking-widest font-medium px-2 py-1"
-                style={{ color: "var(--sp-accent)", border: "1px solid color-mix(in srgb, var(--sp-accent) 30%, transparent)", fontFamily: mono.style.fontFamily }}
+                style={{ color: "var(--sp-accent)", border: "var(--sp-border-width) solid color-mix(in srgb, var(--sp-accent) 30%, transparent)", fontFamily: mono.style.fontFamily }}
               >
                 {item.tag}
               </span>
@@ -271,14 +271,14 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           viewport={{ once: true, margin: "-40px" }}
           variants={fadeUp}
           transition={{ duration: 0.7 }}
-          className="px-8 md:px-20 border-b"
-          style={{ paddingTop: "calc(var(--sp-section-spacing) * 0.5)", paddingBottom: "calc(var(--sp-section-spacing) * 0.5)", borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
+          className="px-8 md:px-20"
+          style={{ paddingTop: "calc(var(--sp-section-spacing) * 0.5)", paddingBottom: "calc(var(--sp-section-spacing) * 0.5)", borderBottom: "var(--sp-border-width) solid rgba(255,255,255,var(--sp-border-opacity))" }}
         >
           <div style={{ maxWidth: "var(--sp-content-width)", margin: "0 auto" }}>
             <div className="flex items-center gap-4 mb-4">
               <span
                 className="text-xs uppercase tracking-widest font-medium px-2 py-1"
-                style={{ color: "var(--sp-accent)", border: "1px solid color-mix(in srgb, var(--sp-accent) 30%, transparent)", fontFamily: mono.style.fontFamily }}
+                style={{ color: "var(--sp-accent)", border: "var(--sp-border-width) solid color-mix(in srgb, var(--sp-accent) 30%, transparent)", fontFamily: mono.style.fontFamily }}
               >
                 {item.tag}
               </span>
@@ -371,7 +371,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
         variants={fadeUp}
         transition={{ duration: 0.8 }}
         className="px-8 md:px-20"
-        style={{ paddingTop: "var(--sp-section-spacing)", paddingBottom: "var(--sp-section-spacing)", borderTop: "1px solid rgba(255,255,255,var(--sp-border-opacity))" }}
+        style={{ paddingTop: "var(--sp-section-spacing)", paddingBottom: "var(--sp-section-spacing)", borderTop: "var(--sp-border-width) solid rgba(255,255,255,var(--sp-border-opacity))" }}
       >
         <p
           className="font-bold leading-tight"
@@ -387,7 +387,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           &ldquo;{CLOSING}&rdquo;
         </p>
 
-        <div className="mt-12 pt-12 flex items-center gap-6" style={{ borderTop: "1px solid rgba(255,255,255,var(--sp-border-opacity))" }}>
+        <div className="mt-12 pt-12 flex items-center gap-6" style={{ borderTop: "var(--sp-border-width) solid rgba(255,255,255,var(--sp-border-opacity))" }}>
           <div>
             <p className="font-black text-lg" style={{ fontFamily: serif.style.fontFamily }}>{designer.name}</p>
             <p className="text-xs uppercase tracking-widest mt-1" style={{ color: "rgba(255,255,255,0.3)", fontFamily: mono.style.fontFamily }}>
