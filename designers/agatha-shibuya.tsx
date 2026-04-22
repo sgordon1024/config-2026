@@ -39,7 +39,7 @@ const CLOSING = "One final thought to leave the reader with."
 
 export default function TemplatePage({ designer }: { designer: Designer }) {
   return (
-    <main className="min-h-screen bg-black text-white font-sans">
+    <main className="min-h-screen text-white font-sans" style={{ backgroundColor: "var(--sp-bg)" }}>
       {/* Back link */}
       <Link
         href="/"

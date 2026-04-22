@@ -9,7 +9,7 @@ const GLYPH_STRIP_URL =
 
 export default function Home() {
   return (
-    <main className="flex flex-col w-screen h-screen bg-black overflow-hidden">
+    <main className="flex flex-col w-screen h-screen overflow-hidden" style={{ backgroundColor: "var(--sp-bg)" }}>
       {/* Ticker — top */}
       <Ticker />
 

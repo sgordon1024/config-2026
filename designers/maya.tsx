@@ -60,7 +60,7 @@ const fadeUp = {
 
 export default function MayaPage({ designer }: { designer: Designer }) {
   return (
-    <main className="min-h-screen bg-black text-white" style={{ fontFamily: sans.style.fontFamily }}>
+    <main className="min-h-screen text-white" style={{ fontFamily: sans.style.fontFamily, backgroundColor: "var(--sp-bg)" }}>
       <Link
         href="/"
         className="fixed top-6 left-6 text-xs uppercase tracking-[0.2em] text-white/30 hover:text-white/60 transition-colors z-50"
@@ -99,7 +99,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
             className="text-xs uppercase tracking-[0.3em] mb-5 font-medium"
-            style={{ color: "#C9A96E", fontFamily: mono.style.fontFamily }}
+            style={{ color: "var(--sp-accent)", fontFamily: mono.style.fontFamily }}
           >
             {designer.role} / Config 2026
           </motion.p>
@@ -142,7 +142,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
         variants={fadeUp}
         transition={{ duration: 0.6 }}
         className="px-8 md:px-20 py-16 border-t border-b"
-        style={{ borderColor: "rgba(255,255,255,0.06)" }}
+        style={{ borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
       >
         <p
           className="text-sm uppercase tracking-[0.2em] max-w-3xl leading-loose"
@@ -163,13 +163,13 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           variants={fadeUp}
           transition={{ duration: 0.7 }}
           className="px-8 md:px-20 py-16 border-b"
-          style={{ borderColor: "rgba(255,255,255,0.06)" }}
+          style={{ borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
         >
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center gap-4 mb-4">
               <span
                 className="text-xs uppercase tracking-widest font-medium px-2 py-1"
-                style={{ color: "#C9A96E", border: "1px solid rgba(201,169,110,0.3)", fontFamily: mono.style.fontFamily }}
+                style={{ color: "var(--sp-accent)", border: "1px solid color-mix(in srgb, var(--sp-accent) 30%, transparent)", fontFamily: mono.style.fontFamily }}
               >
                 {item.tag}
               </span>
@@ -218,13 +218,13 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           variants={fadeUp}
           transition={{ duration: 0.7 }}
           className="px-8 md:px-20 py-16 border-b"
-          style={{ borderColor: "rgba(255,255,255,0.06)" }}
+          style={{ borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
         >
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center gap-4 mb-4">
               <span
                 className="text-xs uppercase tracking-widest font-medium px-2 py-1"
-                style={{ color: "#C9A96E", border: "1px solid rgba(201,169,110,0.3)", fontFamily: mono.style.fontFamily }}
+                style={{ color: "var(--sp-accent)", border: "1px solid color-mix(in srgb, var(--sp-accent) 30%, transparent)", fontFamily: mono.style.fontFamily }}
               >
                 {item.tag}
               </span>
@@ -272,13 +272,13 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           variants={fadeUp}
           transition={{ duration: 0.7 }}
           className="px-8 md:px-20 py-16 border-b"
-          style={{ borderColor: "rgba(255,255,255,0.06)" }}
+          style={{ borderColor: "rgba(255,255,255,var(--sp-border-opacity))" }}
         >
           <div className="max-w-3xl mx-auto">
             <div className="flex items-center gap-4 mb-4">
               <span
                 className="text-xs uppercase tracking-widest font-medium px-2 py-1"
-                style={{ color: "#C9A96E", border: "1px solid rgba(201,169,110,0.3)", fontFamily: mono.style.fontFamily }}
+                style={{ color: "var(--sp-accent)", border: "1px solid color-mix(in srgb, var(--sp-accent) 30%, transparent)", fontFamily: mono.style.fontFamily }}
               >
                 {item.tag}
               </span>
@@ -322,7 +322,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
         >
           &ldquo;{PULL_QUOTE}&rdquo;
         </p>
-        <p className="mt-8 text-xs uppercase tracking-widest" style={{ color: "#C9A96E", fontFamily: mono.style.fontFamily }}>
+        <p className="mt-8 text-xs uppercase tracking-widest" style={{ color: "var(--sp-accent)", fontFamily: mono.style.fontFamily }}>
           Day 2 Keynote
         </p>
       </motion.section>
@@ -352,7 +352,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
         </div>
         <div
           className="hidden md:flex w-1/2 items-end p-16"
-          style={{ background: "#0a0a0a" }}
+          style={{ background: "var(--sp-surface)" }}
         >
           <p
             className="text-sm leading-loose uppercase tracking-[0.15em]"
@@ -371,7 +371,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
         variants={fadeUp}
         transition={{ duration: 0.8 }}
         className="px-8 md:px-20 py-32"
-        style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}
+        style={{ borderTop: "1px solid rgba(255,255,255,var(--sp-border-opacity))" }}
       >
         <p
           className="font-bold leading-tight"
@@ -387,7 +387,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
           &ldquo;{CLOSING}&rdquo;
         </p>
 
-        <div className="mt-12 pt-12 flex items-center gap-6" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+        <div className="mt-12 pt-12 flex items-center gap-6" style={{ borderTop: "1px solid rgba(255,255,255,var(--sp-border-opacity))" }}>
           <div>
             <p className="font-black text-lg" style={{ fontFamily: serif.style.fontFamily }}>{designer.name}</p>
             <p className="text-xs uppercase tracking-widest mt-1" style={{ color: "rgba(255,255,255,0.3)", fontFamily: mono.style.fontFamily }}>
