@@ -251,14 +251,14 @@ export default function StylePanel() {
 
             <PanelSection label="Typography">
               <div>
-                <Label>Body typeface</Label>
-                <select value={settings.font} onChange={e => update("font", e.target.value)} style={selectStyle}>
+                <Label>Heading typeface</Label>
+                <select value={settings.headingFont} onChange={e => update("headingFont", e.target.value)} style={selectStyle}>
                   {FONT_OPTIONS.map(f => <option key={f} value={f}>{f}</option>)}
                 </select>
               </div>
               <div>
-                <Label>Heading typeface</Label>
-                <select value={settings.headingFont} onChange={e => update("headingFont", e.target.value)} style={selectStyle}>
+                <Label>Body typeface</Label>
+                <select value={settings.font} onChange={e => update("font", e.target.value)} style={selectStyle}>
                   {FONT_OPTIONS.map(f => <option key={f} value={f}>{f}</option>)}
                 </select>
               </div>
