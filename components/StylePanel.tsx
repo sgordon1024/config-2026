@@ -265,7 +265,7 @@ export default function StylePanel() {
               <PanelRow label={`Size ${settings.fontSize}px`}>
                 <input type="range" min={12} max={22} step={1} value={settings.fontSize} onChange={e => update("fontSize", Number(e.target.value))} style={rangeInput(settings.accent)} />
               </PanelRow>
-              <PanelRow label={`Brightness ${Math.round(settings.textOpacity * 100)}%`}>
+              <PanelRow label={`Contrast ${Math.round(settings.textOpacity * 100)}%`}>
                 <input type="range" min={0.4} max={1} step={0.01} value={settings.textOpacity} onChange={e => update("textOpacity", Number(e.target.value))} style={rangeInput(settings.accent)} />
               </PanelRow>
             </PanelSection>
