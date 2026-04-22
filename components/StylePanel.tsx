@@ -11,6 +11,7 @@ export type StyleSettings = {
   textOpacity: number
   fontSize: number
   font: string
+  headingFont: string
   contentWidth: number
   sectionSpacing: number
   borderOpacity: number
@@ -25,6 +26,7 @@ export const STYLE_DEFAULTS: StyleSettings = {
   textOpacity: 1,
   fontSize: 16,
   font: "Inter",
+  headingFont: "Playfair Display",
   contentWidth: 768,
   sectionSpacing: 128,
   borderOpacity: 0.07,
@@ -105,22 +107,25 @@ export default function StylePanel() {
     } catch {}
   }, [])
 
-  // Load Google Font dynamically when font changes
+  // Load Google Fonts dynamically for both body and heading fonts
   useEffect(() => {
-    if (isHomePage || settings.font === "Inter") return
-    const fontName = settings.font.replace(/ /g, "+")
-    const linkId = "sp-gfont"
-    let link = document.getElementById(linkId) as HTMLLinkElement | null
-    if (!link) {
-      link = document.createElement("link")
-      link.id = linkId
-      link.rel = "stylesheet"
-      document.head.appendChild(link)
-    }
-    link.href = `https://fonts.googleapis.com/css2?family=${fontName}:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap`
-  }, [settings.font, isHomePage])
+    if (isHomePage) return
+    const toLoad = [settings.font, settings.headingFont].filter(f => f !== "Inter")
+    toLoad.forEach((font, i) => {
+      const name = font.replace(/ /g, "+")
+      const id = `sp-gfont-${i}`
+      let link = document.getElementById(id) as HTMLLinkElement | null
+      if (!link) {
+        link = document.createElement("link")
+        link.id = id
+        link.rel = "stylesheet"
+        document.head.appendChild(link)
+      }
+      link.href = `https://fonts.googleapis.com/css2?family=${name}:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&display=swap`
+    })
+  }, [settings.font, settings.headingFont, isHomePage])
 
-  // Apply CSS variables on designer pages; reset them on homepage
+  // Apply CSS variables on designer pages; reset on homepage
   useEffect(() => {
     const r = document.documentElement
     if (isHomePage) {
@@ -130,6 +135,7 @@ export default function StylePanel() {
       r.style.removeProperty("--sp-text-opacity")
       r.style.removeProperty("--sp-font-size")
       r.style.removeProperty("--sp-font-family")
+      r.style.removeProperty("--sp-heading-font-family")
       r.style.removeProperty("--sp-content-width")
       r.style.removeProperty("--sp-section-spacing")
       r.style.removeProperty("--sp-border-opacity")
@@ -145,6 +151,7 @@ export default function StylePanel() {
     r.style.setProperty("--sp-text-opacity", String(settings.textOpacity))
     r.style.setProperty("--sp-font-size", `${settings.fontSize}px`)
     r.style.setProperty("--sp-font-family", `'${settings.font}', sans-serif`)
+    r.style.setProperty("--sp-heading-font-family", `'${settings.headingFont}', serif`)
     r.style.setProperty("--sp-content-width", `${settings.contentWidth}px`)
     r.style.setProperty("--sp-section-spacing", `${settings.sectionSpacing}px`)
     r.style.setProperty("--sp-border-opacity", String(settings.borderOpacity))
@@ -184,12 +191,12 @@ export default function StylePanel() {
             position: "fixed",
             top: 72,
             right: 20,
-            width: 280,
+            width: 284,
             zIndex: 9999,
-            background: "#111111",
-            border: "1px solid rgba(255,255,255,0.1)",
+            background: "#1c1c1c",
+            border: "1px solid rgba(255,255,255,0.2)",
             borderRadius: 10,
-            boxShadow: "0 24px 64px rgba(0,0,0,0.8)",
+            boxShadow: "0 24px 64px rgba(0,0,0,0.9)",
             fontFamily: "monospace",
             fontSize: 11,
             color: "white",
@@ -201,29 +208,29 @@ export default function StylePanel() {
             onPointerDown={e => dragControls.start(e)}
             style={{
               padding: "10px 14px",
-              borderBottom: "1px solid rgba(255,255,255,0.07)",
+              borderBottom: "1px solid rgba(255,255,255,0.12)",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
               cursor: "grab",
-              background: "#0d0d0d",
+              background: "#141414",
               borderRadius: "10px 10px 0 0",
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
               <div style={{ display: "flex", gap: 3 }}>
-                {[1,2,3].map(i => <div key={i} style={{ width: 5, height: 5, borderRadius: "50%", background: "rgba(255,255,255,0.2)" }} />)}
+                {[1,2,3].map(i => <div key={i} style={{ width: 5, height: 5, borderRadius: "50%", background: "rgba(255,255,255,0.45)" }} />)}
               </div>
-              <span style={{ color: "rgba(255,255,255,0.4)", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: 10 }}>Style Panel</span>
+              <span style={{ color: "rgba(255,255,255,0.8)", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: 10 }}>Style Panel</span>
             </div>
             <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-              <button onClick={reset} style={{ color: "rgba(255,255,255,0.3)", background: "none", border: "none", cursor: "pointer", fontSize: 10, letterSpacing: "0.08em", padding: 0 }}>RESET</button>
-              <button onClick={() => setOpen(false)} style={{ color: "rgba(255,255,255,0.3)", background: "none", border: "none", cursor: "pointer", fontSize: 18, lineHeight: 1, padding: 0 }}>×</button>
+              <button onClick={reset} style={{ color: "rgba(255,255,255,0.6)", background: "none", border: "none", cursor: "pointer", fontSize: 10, letterSpacing: "0.08em", padding: 0 }}>RESET</button>
+              <button onClick={() => setOpen(false)} style={{ color: "rgba(255,255,255,0.6)", background: "none", border: "none", cursor: "pointer", fontSize: 18, lineHeight: 1, padding: 0 }}>×</button>
             </div>
           </div>
 
           {/* Controls */}
-          <div style={{ padding: "12px 14px", display: "flex", flexDirection: "column", gap: 18, maxHeight: "80vh", overflowY: "auto" }}>
+          <div style={{ padding: "14px 14px", display: "flex", flexDirection: "column", gap: 20, maxHeight: "80vh", overflowY: "auto" }}>
 
             <PanelSection label="Colors">
               <PanelRow label="Background">
@@ -232,8 +239,8 @@ export default function StylePanel() {
                 <Mono>{settings.bg}</Mono>
               </PanelRow>
               <div>
-                <Dim>Accent</Dim>
-                <div style={{ display: "flex", gap: 5, flexWrap: "wrap", marginTop: 6 }}>
+                <Label>Accent</Label>
+                <div style={{ display: "flex", gap: 5, flexWrap: "wrap", marginTop: 7 }}>
                   {ACCENT_PRESETS.map(({ color, label }) => (
                     <button key={color} title={label} onClick={() => update("accent", color)} style={{ width: 18, height: 18, borderRadius: "50%", background: color, padding: 0, cursor: "pointer", border: settings.accent === color ? "2px solid white" : "2px solid transparent", outline: "none", flexShrink: 0 }} />
                   ))}
@@ -244,12 +251,14 @@ export default function StylePanel() {
 
             <PanelSection label="Typography">
               <div>
-                <Dim>Typeface</Dim>
-                <select
-                  value={settings.font}
-                  onChange={e => update("font", e.target.value)}
-                  style={{ display: "block", width: "100%", marginTop: 6, background: "#1e1e1e", color: "rgba(255,255,255,0.7)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 4, padding: "5px 8px", fontSize: 11, fontFamily: "monospace", cursor: "pointer", outline: "none" }}
-                >
+                <Label>Body typeface</Label>
+                <select value={settings.font} onChange={e => update("font", e.target.value)} style={selectStyle}>
+                  {FONT_OPTIONS.map(f => <option key={f} value={f}>{f}</option>)}
+                </select>
+              </div>
+              <div>
+                <Label>Heading typeface</Label>
+                <select value={settings.headingFont} onChange={e => update("headingFont", e.target.value)} style={selectStyle}>
                   {FONT_OPTIONS.map(f => <option key={f} value={f}>{f}</option>)}
                 </select>
               </div>
@@ -282,13 +291,13 @@ export default function StylePanel() {
             <PanelSection label="Texture">
               <PanelRow label="Film grain">
                 <input type="checkbox" checked={settings.grain} onChange={e => update("grain", e.target.checked)} style={{ accentColor: settings.accent, cursor: "pointer", width: 14, height: 14 }} />
-                <Dim style={{ fontSize: 10 }}>noise overlay</Dim>
+                <span style={{ color: "rgba(255,255,255,0.45)", fontSize: 10 }}>noise overlay</span>
               </PanelRow>
             </PanelSection>
 
-            <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 10, color: "rgba(255,255,255,0.18)", lineHeight: 1.7, fontSize: 10 }}>
+            <div style={{ borderTop: "1px solid rgba(255,255,255,0.12)", paddingTop: 10, color: "rgba(255,255,255,0.45)", lineHeight: 1.7, fontSize: 10 }}>
               Triple-click anywhere to toggle.<br />
-              Changes apply live. Saved across sessions.
+              Saved across sessions.
             </div>
           </div>
         </motion.div>
@@ -300,8 +309,8 @@ export default function StylePanel() {
 function PanelSection({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div>
-      <div style={{ color: "rgba(255,255,255,0.22)", textTransform: "uppercase", letterSpacing: "0.14em", fontSize: 10, marginBottom: 10 }}>{label}</div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>{children}</div>
+      <div style={{ color: "rgba(255,255,255,0.55)", textTransform: "uppercase", letterSpacing: "0.14em", fontSize: 10, marginBottom: 10, fontWeight: 600 }}>{label}</div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>{children}</div>
     </div>
   )
 }
@@ -309,23 +318,37 @@ function PanelSection({ label, children }: { label: string; children: React.Reac
 function PanelRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-      <Dim style={{ minWidth: 90, flexShrink: 0 }}>{label}</Dim>
+      <span style={{ color: "rgba(255,255,255,0.75)", fontSize: 10, minWidth: 96, flexShrink: 0 }}>{label}</span>
       <div style={{ display: "flex", alignItems: "center", gap: 6, flex: 1 }}>{children}</div>
     </div>
   )
 }
 
-function Dim({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
-  return <span style={{ color: "rgba(255,255,255,0.35)", fontSize: 10, ...style }}>{children}</span>
+function Label({ children }: { children: React.ReactNode }) {
+  return <span style={{ color: "rgba(255,255,255,0.65)", fontSize: 10, display: "block", marginBottom: 5 }}>{children}</span>
 }
 
 function Mono({ children }: { children: React.ReactNode }) {
-  return <span style={{ color: "rgba(255,255,255,0.25)", fontSize: 10 }}>{children}</span>
+  return <span style={{ color: "rgba(255,255,255,0.5)", fontSize: 10 }}>{children}</span>
 }
 
 const colorInput: React.CSSProperties = {
-  width: 22, height: 22, borderRadius: 4, border: "1px solid rgba(255,255,255,0.12)",
+  width: 22, height: 22, borderRadius: 4, border: "1px solid rgba(255,255,255,0.18)",
   background: "none", cursor: "pointer", padding: 0, flexShrink: 0,
+}
+
+const selectStyle: React.CSSProperties = {
+  display: "block",
+  width: "100%",
+  background: "#252525",
+  color: "rgba(255,255,255,0.88)",
+  border: "1px solid rgba(255,255,255,0.18)",
+  borderRadius: 4,
+  padding: "5px 8px",
+  fontSize: 11,
+  fontFamily: "monospace",
+  cursor: "pointer",
+  outline: "none",
 }
 
 const rangeInput = (accent: string): React.CSSProperties => ({

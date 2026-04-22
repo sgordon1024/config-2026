@@ -110,7 +110,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
             transition={{ duration: 0.9, delay: 0.4 }}
             className="font-black leading-none mb-10"
             style={{
-              fontFamily: serif.style.fontFamily,
+              fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)",
               fontSize: "clamp(72px, 13vw, 160px)",
               letterSpacing: "-0.03em",
             }}
@@ -124,7 +124,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
             transition={{ duration: 0.9, delay: 0.6 }}
             className="max-w-lg text-xl md:text-2xl leading-relaxed"
             style={{
-              fontFamily: serif.style.fontFamily,
+              fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)",
               fontStyle: "italic",
               color: "rgba(255,255,255,0.6)",
             }}
@@ -180,7 +180,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
             <p className="text-xs mb-6 leading-relaxed" style={{ color: "rgba(255,255,255,0.25)", fontFamily: mono.style.fontFamily, letterSpacing: "0.05em" }}>
               {item.talk}
             </p>
-            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: serif.style.fontFamily, fontSize: "clamp(26px, 3.5vw, 44px)" }}>
+            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)", fontSize: "clamp(26px, 3.5vw, 44px)" }}>
               {item.title}
             </h2>
             <p className="text-lg leading-relaxed font-light" style={{ color: "rgba(255,255,255,0.5)" }}>
@@ -235,7 +235,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
             <p className="text-xs mb-6 leading-relaxed" style={{ color: "rgba(255,255,255,0.25)", fontFamily: mono.style.fontFamily, letterSpacing: "0.05em" }}>
               {item.talk}
             </p>
-            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: serif.style.fontFamily, fontSize: "clamp(26px, 3.5vw, 44px)" }}>
+            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)", fontSize: "clamp(26px, 3.5vw, 44px)" }}>
               {item.title}
             </h2>
             <p className="text-lg leading-relaxed font-light" style={{ color: "rgba(255,255,255,0.5)" }}>
@@ -289,7 +289,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
             <p className="text-xs mb-6 leading-relaxed" style={{ color: "rgba(255,255,255,0.25)", fontFamily: mono.style.fontFamily, letterSpacing: "0.05em" }}>
               {item.talk}
             </p>
-            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: serif.style.fontFamily, fontSize: "clamp(26px, 3.5vw, 44px)" }}>
+            <h2 className="font-bold mb-5 leading-tight" style={{ fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)", fontSize: "clamp(26px, 3.5vw, 44px)" }}>
               {item.title}
             </h2>
             <p className="text-lg leading-relaxed font-light" style={{ color: "rgba(255,255,255,0.5)" }}>
@@ -312,7 +312,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
         <p
           className="mx-auto font-black leading-none"
           style={{
-            fontFamily: serif.style.fontFamily,
+            fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)",
             fontStyle: "italic",
             fontSize: "clamp(32px, 5.5vw, 72px)",
             color: "rgba(255,255,255,0.9)",
@@ -376,7 +376,7 @@ export default function MayaPage({ designer }: { designer: Designer }) {
         <p
           className="font-bold leading-tight"
           style={{
-            fontFamily: serif.style.fontFamily,
+            fontFamily: "var(--sp-heading-font-family, Playfair Display, serif)",
             fontStyle: "italic",
             fontSize: "clamp(32px, 5vw, 64px)",
             color: "rgba(255,255,255,0.45)",
